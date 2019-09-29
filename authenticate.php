@@ -19,11 +19,11 @@
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $password);
         $stmt->fetch();
-        // Account exists, now we verify the password.
-        // Note: remember to use password_hash in your registration file to store the hashed passwords.
+        // Account exists,  verify the password.
+        
         if (password_verify($_POST['password'], $password)) 
         {
-            // Verification success! User has loggedin!
+            // Verification success
             // Create sessions 
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
@@ -33,12 +33,18 @@
         }
         else 
         {
-            echo 'Incorrect password!';
+            echo '<script language="javascript">';
+            echo 'alert("Incorrect Passord")';
+            echo '</script>';
+            echo '<script>window.location.href = "index.html";</script>';
         }
     }
     else
     {
-        echo 'Incorrect username!';
+        echo '<script language="javascript">';
+        echo 'alert("Incorrect Username")';
+        echo '</script>';
+        echo '<script>window.location.href = "index.html";</script>';
     }
     $stmt->close();
 ?>

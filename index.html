@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
 		<meta charset="utf-8">
-		<title>Login</title>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-	</head>
+        <title>Login</title>
+        <link rel="stylesheet" href="./CSS/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+    </head>
+
 	<body>
-		<div class="login">
-			<h1>Login</h1>
-			<form action="authenticate.php" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-				<input type="submit" value="Login">
-			</form>
-		</div>
+
+		<div class="container">
+            <div class="row">
+              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                        <form action="authenticate.php" method="POST">
+                            <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+                            </div>
+                            <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                            <a class="reg-link" href="./register.html">Register</a>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+		
 	</body>
 </html>
