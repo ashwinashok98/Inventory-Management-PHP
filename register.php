@@ -1,3 +1,24 @@
+<?php
+    session_start();
+    include('./connect.php');
+    // Redirect if not logged in
+    if (!isset($_SESSION['loggedin']))
+    {
+        header('Location: index.html');
+        exit();
+    }
+    if(($_SESSION['admin']==0))
+    {
+        echo '<script language="javascript">';
+        echo 'alert("Not An Admin")';
+        echo '</script>';
+        echo '<script>window.location.href = "home.php";</script>';
+    }
+    else
+    {
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -38,3 +59,6 @@
 		
 	</body>
 </html>
+<?php
+    }
+?>
