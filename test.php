@@ -24,10 +24,16 @@
             <div class="row">
               <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
+                    
                   <div class="card-body">
+                  
                     <h5 class="card-title text-center">Search Inventory</h5>
-                    <table class="table table-striped">
+                    
                         
+                    
+                    
+                    <table class="table table-striped">
+                    
                         <tbody>
                             <tr>
                             <th scope="row">1</th>

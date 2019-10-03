@@ -20,12 +20,105 @@ if (!isset($_SESSION['loggedin'])) {
 
 	<body>
         <nav class="navbar navbar-dark bg-primary">
-            <form action="logout.php" method='post'>
-                <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Logout</button>
-            </form>
             <form action="register.php" method='post'>
                 <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Register</button>
             </form>
+            <a class="navbar-brand" href="/">
+                <div >
+                        <h2>STOCK MANAGER</h2>
+                </div>
+            </a>
+            
+            
+            
+            <form action="logout.php" method='post'>
+                <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Logout</button>
+            </form>
+            <!--
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#"><h4>Stock Manager</h4></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="adminHome.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
+      </li>
+      
+    </ul>
+            
+            
+            
         </nav>
+
+-->
+            
+            
+        </nav>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Search Inventory</h5>
+                        <form id="check">
+                            <div class="form-group">
+                            <label for="inp">Enter Item</label>
+                            <input type="text" class="form-control" id="item" name="item" placeholder="Enter Item Code" required>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Check</button>
+                            
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+     
+                    
+        <div id="result"></div>
+                        
+                    
     </body>
 </html>
+<script>
+    $(document).ready(function(){
+    $('#check').submit(function(){
+
+        /*// show that something is loading
+        $('#result').html("<b>Loading response...</b>");*/
+
+        // Call ajax for pass data to other place
+        $.ajax({
+            type: 'POST',
+            url: 'fetch.php',
+            data: $(this).serialize() // getting filed value in serialize form
+        })
+        .done(function(data){ // if getting done then call.
+
+            // show the response
+            $('#result').html(data);
+
+        })
+        .fail(function() { // if fail then getting message
+
+            // just in case posting your form failed
+            alert( "Posting failed." );
+
+        });
+
+        // to prevent refreshing the whole page page
+        return false;
+
+        });
+    });
+</script>
+   

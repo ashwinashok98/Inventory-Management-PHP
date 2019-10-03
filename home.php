@@ -20,6 +20,10 @@ if (!isset($_SESSION['loggedin'])) {
 
 	<body>
         <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"><h4>Stock Manager</h4></a>
+            <form>
+                
+            </form>
             <form action="logout.php" method='post'>
                 <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Logout</button>
             </form>

@@ -42,11 +42,13 @@
                     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                         <div class="card card-signin my-5">
                             <div class="card-body">
-                            <h5 class="card-title text-center">Search Inventory</h5>';
-                                
+                            <h3 class="card-title text-center"><b>STOCK</b></h3>
+                            <img id="stock-img" src="chair1.png" >';
+                            
                             echo'<table class="table table-striped">
                         
                             <tbody>
+                          
                                 <tr>
                                 <th scope="row">Name</th>
                                 <td>'.$productName.'</td>
@@ -81,7 +83,7 @@
                     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                         <div class="card card-signin my-5">
                             <div class="card-body">
-                            <h4 class="card-title text-center">No Results Found</h4>';
+                                 <h4 class="card-title text-center">No Results Found</h4>';
                                 
 
               
