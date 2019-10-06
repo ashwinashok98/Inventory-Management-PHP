@@ -15,13 +15,13 @@ if (!isset($_SESSION['loggedin'])) {
         <title>Home</title>
         <link rel="stylesheet" href="./CSS/main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
 
 	<body>
         <nav class="navbar navbar-dark bg-primary">
-            <form action="register.php" method='post'>
-                <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Register</button>
+            <form action="admin.php" method='post'>
+                <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Admin</button>
             </form>
             <a class="navbar-brand" href="/">
                 <div >
@@ -34,31 +34,7 @@ if (!isset($_SESSION['loggedin'])) {
             <form action="logout.php" method='post'>
                 <button class="btn btn-lg btn-info btn-block text-uppercase" type="submit">Logout</button>
             </form>
-            <!--
-                <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand" href="#"><h4>Stock Manager</h4></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="adminHome.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout.php">Logout</a>
-      </li>
-      
-    </ul>
-            
-            
-            
-        </nav>
-
--->
+           
             
             
         </nav>
@@ -83,8 +59,7 @@ if (!isset($_SESSION['loggedin'])) {
         </div>
      </div>
      
-                    
-        <div id="result"></div>
+         <div id="result"></div>
                         
                     
     </body>
@@ -110,15 +85,14 @@ if (!isset($_SESSION['loggedin'])) {
         })
         .fail(function() { // if fail then getting message
 
-            // just in case posting your form failed
+            // just in case posting failed
             alert( "Posting failed." );
 
-        });
+        }); 
 
         // to prevent refreshing the whole page page
         return false;
 
         });
     });
-</script>
-   
+</script> 

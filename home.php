@@ -50,7 +50,7 @@ if (!isset($_SESSION['loggedin'])) {
      </div>
      
                     
-                        <div id="result"></div>
+       <div id="result"></div>
                         
                     
     </body>
@@ -76,7 +76,7 @@ if (!isset($_SESSION['loggedin'])) {
         })
         .fail(function() { // if fail then getting message
 
-            // just in case posting your form failed
+            // just in case posting failed
             alert( "Posting failed." );
 
         });

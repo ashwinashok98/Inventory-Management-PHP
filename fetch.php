@@ -20,6 +20,7 @@
         $item=$_POST['item'];
         if ($stmt = $con->prepare('select * from inventory where productId=?')) 
         {
+           
             // Bind parameters (s = string, i = int, b = blob, etc)
             $stmt->bind_param('i', $item);
             $stmt->execute();
@@ -42,8 +43,7 @@
                     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                         <div class="card card-signin my-5">
                             <div class="card-body">
-                            <h3 class="card-title text-center"><b>STOCK</b></h3>
-                            <img id="stock-img" src="chair1.png" >';
+                            <h3 class="card-title text-center"><b>STOCK</b></h3>';
                             
                             echo'<table class="table table-striped">
                         
