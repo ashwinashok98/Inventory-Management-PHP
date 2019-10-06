@@ -64,20 +64,22 @@
                                              $stmt->execute();
                                              // Store the result 
                                              $stmt->store_result();
-                                         } 
-                                         if ($stmt->num_rows > 0) 
-                                         {
-                                             $stmt1 = $con->prepare("UPDATE inventory SET quantity=? WHERE productId=? ");
-                                             $stmt1->bind_param('is',$Quant ,$PID);
-                                             $stmt1->execute();
-                                             
-                                         }
+                                        
+                                            if ($stmt->num_rows > 0) 
+                                            {
+                                                $stmt1 = $con->prepare("UPDATE inventory SET quantity=? WHERE productId=? ");
+                                                $stmt1->bind_param('is',$Quant ,$PID);
+                                                $stmt1->execute();
+                                                
+                                            }
+                                        
                                          else
                                          {
-                                            $stmt2 = $con->prepare("INSERT INTO inventory(productName, productId, quantity,color) VALUES (?,?,?,?)");
-                                            $stmt->bind_param('ssis', $PName,$PID,$Quant,$color);
-                                            $stmt->execute();
+                                            $stmt2 = $con->prepare("INSERT INTO inventory(productName, productId, quantity,color) VALUES (?, ?, ?, ?)");
+                                            $stmt2->bind_param('ssis', $PName,$PID,$Quant,$color);
+                                            $stmt2->execute();
                                          }
+                                        }
 										
 										
 										
